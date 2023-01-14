@@ -1,5 +1,8 @@
 {
     "name": "Builder",
+    "scripts": [
+        "Singleton.cs"
+    ],
     "icon-src": "singleton.png",
     "author": "none"
 }
