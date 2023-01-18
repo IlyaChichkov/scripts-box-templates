@@ -1,3 +1,4 @@
+# change: github actions
 on:
   push:
     branches:
@@ -9,4 +10,4 @@ jobs:
     steps:
       - run:
           echo "Running!"
-          ls
+          ls -R
