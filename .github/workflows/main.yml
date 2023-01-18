@@ -8,9 +8,14 @@ jobs:
     update_map:
         runs-on: ubuntu-latest
         steps:
+            - uses: actions/setup-python@v1
+              with:
+                python-version: '3.8'
+                architecture: 'x64'
             - name: 'Basic information'
               run: |
                   echo "Running! ${HOME}"
+                  echo "GITHUB_WORKFLOW - ${GITHUB_WORKFLOW}"
                   echo "GITHUB_ACTIONS - ${GITHUB_WORKSPACE}"
                   echo "GITHUB_REPOSITORY - ${GITHUB_REPOSITORY}"
                   echo "GITHUB_ACTION_PATH - ${GITHUB_ACTION_PATH}"
@@ -25,3 +30,6 @@ jobs:
                   echo "GITHUB_ACTION_PATH"
                   cd ${GITHUB_ACTION_PATH}
                   ls
+            - name: 'Start Python'
+              run: |
+                  python ${GITHUB_WORKFLOW}\update_map.py
