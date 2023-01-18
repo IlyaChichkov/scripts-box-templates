@@ -6,24 +6,28 @@ from os import walk
 root_path = ''
 
 def get_map():
-    map = { 'name': '123'}
-    map = json.dump(map)
+    map = { 'folders': '123' }
+    map = json.dumps(map)
+    f = get_folders(root_path)
+    for folder in f:
+        f.extend(get_folders(root_path + '/' + folder))
+    print(f)
+    print('\n')
     print(map)
 
-def hello():
-    print('Test started!')
-    root_path = os.getcwd()
-    print(os.listdir())
-    print('\n')
+def get_folders(path):
     f = []
-    for (dirpath, dirnames, filenames) in walk(root_path):
-        f.extend(filenames)
-        f.extend(dirnames)
-        print(f)
-        print('\n')
+    for (dirpath, dirnames, filenames) in walk(path):
+        if not dirnames[0] is '.':
+            f.extend(dirnames)
         break
-    print('Test done!')
+    print(f)
+    print('\n')
+
+def init():
+    print('Map update started!')
+    root_path = os.getcwd()
 
 if __name__ == '__main__':
-    hello()
+    init()
     get_map()
