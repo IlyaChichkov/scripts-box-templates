@@ -17,6 +17,6 @@ jobs:
             - name: 'Test'
               run: |
                   cd ${HOME}
-                  ls ${GITHUB_WORKSPACE}
+                  ls
                   cd ${GITHUB_WORKSPACE}
-                  ls ${GITHUB_WORKSPACE}
+                  ls
