@@ -7,4 +7,6 @@ jobs:
   update_map:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Running!"
+      - run:
+          echo "Running!"
+          ls
