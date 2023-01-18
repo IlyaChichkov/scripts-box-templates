@@ -30,7 +30,6 @@ def get_folders(path):
         if '.' not in dir[0]:
             group_folders = os_walk_folders(path + '/' + dir)
             result.append({ 'name': dir, 'folders': group_folders })
-        print(dir)
 
     return result
 
@@ -41,6 +40,11 @@ def init():
     map = get_map()
     map_file = open(root_path + '/map.json', 'w')
     map_file.write(map)
+    map_file.close()
+
+    map_file = open(root_path + '/map.json', 'r')
+    f = map_file.read()
+    print(f)
     map_file.close()
 
 if __name__ == '__main__':
