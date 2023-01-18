@@ -14,6 +14,7 @@ jobs:
                   echo "GITHUB_WORKFLOW - ${GITHUB_WORKFLOW}"
                   echo "GITHUB_ACTIONS - ${GITHUB_WORKSPACE}"
                   echo "GITHUB_REPOSITORY - ${GITHUB_REPOSITORY}"
+                  echo "GITHUB_ACTION_PATH - ${GITHUB_ACTION_PATH}"
             - name: 'Test'
               run: |
                   echo "HOME"
@@ -21,4 +22,10 @@ jobs:
                   ls
                   echo "GITHUB_WORKSPACE"
                   cd ${GITHUB_WORKSPACE}
+                  ls
+                  echo "GITHUB_WORKFLOW"
+                  cd ${GITHUB_WORKFLOW}
+                  ls
+                  echo "GITHUB_ACTION_PATH"
+                  cd ${GITHUB_ACTION_PATH}
                   ls
