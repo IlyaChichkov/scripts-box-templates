@@ -32,4 +32,4 @@ jobs:
                   ls
             - name: 'Start Python'
               run: |
-                  python ${GITHUB_WORKFLOW}\update_map.py
+                  python .github/workflows/update_map.py
