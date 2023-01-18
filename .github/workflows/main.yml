@@ -11,6 +11,6 @@ jobs:
             - name: 'Test'
               run:
                   echo "Running! ${HOME}"
-                  #echo "GITHUB_WORKFLOW - ${GITHUB_WORKFLOW}"
-                  #echo "GITHUB_ACTIONS - ${GITHUB_ACTIONS}"
-                  #echo "GITHUB_REPOSITORY - ${GITHUB_REPOSITORY}"
+                  echo "GITHUB_WORKFLOW - ${GITHUB_WORKFLOW}"
+                  echo "GITHUB_ACTIONS - ${GITHUB_ACTIONS}"
+                  echo "GITHUB_REPOSITORY - ${GITHUB_REPOSITORY}"
