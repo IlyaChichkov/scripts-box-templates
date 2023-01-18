@@ -12,5 +12,9 @@ jobs:
               run:
                   echo "Running! ${HOME}"
                   echo "GITHUB_WORKFLOW - ${GITHUB_WORKFLOW}"
-                  echo "GITHUB_ACTIONS - ${GITHUB_ACTIONS}"
+                  echo "GITHUB_ACTIONS - ${GITHUB_WORKSPACE}"
                   echo "GITHUB_REPOSITORY - ${GITHUB_REPOSITORY}"
+                  cd ${HOME}
+                  ls
+                  cd ${GITHUB_WORKSPACE}
+                  ls
