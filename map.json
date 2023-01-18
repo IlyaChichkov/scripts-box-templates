@@ -1,18 +1,21 @@
 {
     "folders": [
         {
-            "patterns": [
+            "name": "patterns",
+            "folders": [
                 "Builder",
                 "Singleton"
             ]
         },
         {
-            "user-templates": [
+            "name": "user-templates",
+            "folders": [
                 "PlayerMovement"
             ]
         },
         {
-            "default-template": []
+            "name": "default-template",
+            "folders": []
         }
     ]
 }
