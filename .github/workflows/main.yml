@@ -8,13 +8,15 @@ jobs:
     update_map:
         runs-on: ubuntu-latest
         steps:
-            - name: 'Test'
-              run:
+            - name: 'Basic information'
+              run: |
                   echo "Running! ${HOME}"
                   echo "GITHUB_WORKFLOW - ${GITHUB_WORKFLOW}"
                   echo "GITHUB_ACTIONS - ${GITHUB_WORKSPACE}"
                   echo "GITHUB_REPOSITORY - ${GITHUB_REPOSITORY}"
+            - name: 'Test'
+              run: |
                   cd ${HOME}
-                  ls
+                  ls ${GITHUB_WORKSPACE}
                   cd ${GITHUB_WORKSPACE}
-                  ls
+                  ls ${GITHUB_WORKSPACE}
