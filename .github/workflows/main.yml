@@ -5,12 +5,12 @@ on:
     - master
   
 jobs:
-  update_map:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 'Test'
-        run:
-          echo "Running! ${HOME}"
-          echo "GITHUB_WORKFLOW - ${GITHUB_WORKFLOW}"
-          echo "GITHUB_ACTIONS - ${GITHUB_ACTIONS}"
-          echo "GITHUB_REPOSITORY - ${GITHUB_REPOSITORY}"
+    update_map:
+        runs-on: ubuntu-latest
+        steps:
+            - name: 'Test'
+              run:
+                  echo "Running! ${HOME}"
+                  #echo "GITHUB_WORKFLOW - ${GITHUB_WORKFLOW}"
+                  #echo "GITHUB_ACTIONS - ${GITHUB_ACTIONS}"
+                  #echo "GITHUB_REPOSITORY - ${GITHUB_REPOSITORY}"
