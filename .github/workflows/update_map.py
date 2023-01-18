@@ -18,8 +18,8 @@ def get_map():
 def get_folders(path):
     f = []
     for (dirpath, dirnames, filenames) in walk(path):
-        if not dirnames[0] is '.':
-            f.extend(dirnames)
+        print(dirnames)
+        f.extend(dirnames)
         break
     print(f)
     print('\n')
