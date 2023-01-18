@@ -1,0 +1,10 @@
+on:
+  push:
+    branches:
+    - master
+  
+jobs:
+  update_map:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running!"
