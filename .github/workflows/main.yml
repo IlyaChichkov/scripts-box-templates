@@ -25,4 +25,7 @@ jobs:
                   python .github/workflows/update_map.py
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
-                commit_message: Apply map updater changes
+                commit_message: apply`:` map updater changes
+                branch: master
+                commit_options: '--no-verify --signoff'
+                tagging_message: ${{steps.update.outputs.version}}
