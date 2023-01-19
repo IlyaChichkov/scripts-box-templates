@@ -13,19 +13,23 @@ jobs:
               with:
                 python-version: '3.8'
                 architecture: 'x64'
-            - name: 'Basic information'
-              run: |
-                  echo "Running! ${HOME}"
-                  echo "GITHUB_WORKFLOW - ${GITHUB_WORKFLOW}"
-                  echo "GITHUB_ACTIONS - ${GITHUB_WORKSPACE}"
-                  echo "GITHUB_REPOSITORY - ${GITHUB_REPOSITORY}"
-                  echo "GITHUB_ACTION_PATH - ${GITHUB_ACTION_PATH}"
+                        
+            - name: Checkout branch
+              run: git switch "${GITHUB_REF:11}"
+
             - name: 'Start Python'
               run: |
                   python .github/workflows/update_map.py
+
+            - name: Set git remote URL
+              run: git remote set-url origin https://$TOKEN:x-oauth-basic@github.com/$GITHUB_REPOSITORY
+              env:
+                TOKEN: ${{ secrets.TOKEN }}
+
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
-                commit_message: apply`:` map updater changes
-                branch: master
-                commit_options: '--no-verify --signoff'
-                tagging_message: ${{steps.update.outputs.version}}
+                commit_author_email: ilya.chichkov15@gmail.com
+                commit_author_name: Ilya Chichkov
+                commit_message: Apply map_updater changes
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
