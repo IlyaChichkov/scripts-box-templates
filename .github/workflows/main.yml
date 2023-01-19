@@ -13,6 +13,8 @@ jobs:
               with:
                 python-version: '3.8'
                 architecture: 'x64'
+                ref: ${{ github.head_ref }}
+                token: ${{ secrets.PAT }}
                         
             - name: Checkout branch
               run: git switch "${GITHUB_REF:11}"
@@ -28,8 +30,10 @@ jobs:
 
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
+                branch: master
                 commit_author_email: ilya.chichkov15@gmail.com
                 commit_author_name: Ilya Chichkov
                 commit_message: Apply map_updater changes
+                push_options: --force
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
