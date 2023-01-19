@@ -3,7 +3,8 @@
         {
             "folders": [
                 "PlayerMovement",
-                "FogOfWar"
+                "FogOfWar",
+                "Android_Input"
             ],
             "name": "community-templates"
         },
