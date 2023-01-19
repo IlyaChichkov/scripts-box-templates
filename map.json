@@ -1,21 +1,22 @@
 {
     "folders": [
         {
-            "name": "patterns",
+            "folders": [
+                "PlayerMovement",
+                "FogOfWar"
+            ],
+            "name": "community-templates"
+        },
+        {
+            "folders": [],
+            "name": "default-template"
+        },
+        {
             "folders": [
                 "Builder",
                 "Singleton"
-            ]
-        },
-        {
-            "name": "community-templates",
-            "folders": [
-                "PlayerMovement"
-            ]
-        },
-        {
-            "name": "default-template",
-            "folders": []
+            ],
+            "name": "patterns"
         }
     ]
 }
