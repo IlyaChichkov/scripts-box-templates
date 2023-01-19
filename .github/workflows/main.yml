@@ -1,5 +1,7 @@
 # change: github actions
 on:
+  pull_request:
+    types: [closed]
   push:
     branches:
     - master
