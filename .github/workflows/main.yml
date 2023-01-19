@@ -20,17 +20,9 @@ jobs:
                   echo "GITHUB_ACTIONS - ${GITHUB_WORKSPACE}"
                   echo "GITHUB_REPOSITORY - ${GITHUB_REPOSITORY}"
                   echo "GITHUB_ACTION_PATH - ${GITHUB_ACTION_PATH}"
-            - name: 'Test'
-              run: |
-                  echo "HOME"
-                  cd ${HOME}
-                  ls
-                  echo "GITHUB_WORKSPACE"
-                  cd ${GITHUB_WORKSPACE}
-                  ls
-                  echo "GITHUB_ACTION_PATH"
-                  cd ${GITHUB_ACTION_PATH}
-                  ls
             - name: 'Start Python'
               run: |
                   python .github/workflows/update_map.py
+            - uses: stefanzweifel/git-auto-commit-action@v4
+              with:
+                commit_message: Apply map updater changes
